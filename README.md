@@ -15,9 +15,9 @@ The goal is to model a robust social environment, taking inspiration from real h
 
 ## Adversarial RL based agent: IAGO (under development)
 
-Named after Shakespeare's famous villan, Iago is an adversarial RL agent that will be just another villager, but learn to weaponize disinformation, gossip, accusations, etc to systematically destroy the Village, for example through triggering cascade accusations 
+Named after Shakespeare's famous villan, IAGO is an adversarial RL agent that will be just another villager, but learn to weaponize disinformation, gossip, accusations, etc to systematically destroy the Village, for example through triggering cascade accusations 
 by targeting the right villagers at the right time. 
-All while staying completely undetected themselves, like his literary counterpart. IAGO has to infer hidden psychological, emotional and personality states of villagers through observable actions, while successfully hiding their own true nature
+All while staying completely undetected themselves, like his literary counterpart. IAGO has to infer hidden psychological, emotional and personality states of villagers through observable actions, while successfully hiding their own true nature.
 
 Eventually, IAGO can be integrated with a LLM interface, so that they can articulate their manipulation strategies in natural language. 
 
