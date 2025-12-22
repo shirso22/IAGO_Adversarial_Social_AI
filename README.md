@@ -10,7 +10,7 @@ determine actions and interactions with others (accusing someone of witchcraft, 
 
 Village level dynamics, such as mass hysteria, institutional trust, collective stress, witch trial mechanics, etc are implemented.
 
-The goal is to build a robust social environment, taking inspiration from real historical medieval village dynamics. The intention is to observe emergent behavior, such as cascade accusations that tear the community part, mob rule due to complete erosion of institutional trust, etc
+The goal is to model a robust social environment, taking inspiration from real historical medieval village dynamics. The intention is to observe emergent behavior, such as cascade accusations that tear the community part, mob rule due to complete erosion of institutional trust, etc
 
 
 ## Adversarial RL based agent: IAGO (under development)
