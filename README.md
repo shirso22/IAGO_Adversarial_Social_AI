@@ -25,11 +25,11 @@ IAGO has to infer hidden psychological, emotional and personality states of vill
 
 This simulator is intended as an experimental environment rather than a finished model. Extensions can include:
 
-Training and evaluating adversarial and defensive agents. One agent tries to destabilize while the other tries to stabilize the community.
+1) Training and evaluating adversarial and defensive agents. One agent tries to destabilize while the other tries to stabilize the community.
 
-Systematic assessment of intervention and detection strategies.
+2) Systematic assessment of intervention and detection strategies.
 
-Having the Villagers be adaptive and more resilient to manipualation.
+3) Having the Villagers be adaptive and more resilient to manipualation.
 
-Integration with language-model interfaces for explicit articulation of manipulation strategies.
+4) Integration with language-model interfaces for explicit articulation of manipulation strategies.
 
