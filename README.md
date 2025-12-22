@@ -17,7 +17,9 @@ The goal is to model a robust social environment, taking inspiration from real h
 
 Named after Shakespeare's famous villan, IAGO is an adversarial RL agent that will be just another villager, but learn to weaponize disinformation, gossip, accusations, etc to systematically destabilize the Village, for example through triggering cascade accusations 
 by targeting the right villagers at the right time. 
-While staying completely undetected themselves, like his literary counterpart. IAGO has to infer hidden psychological, emotional and personality states of villagers through observable actions, while successfully hiding their own true nature.
+While staying completely undetected themselves, like his literary counterpart. 
+
+IAGO has to infer hidden psychological, emotional and personality states of villagers through observable actions, while successfully hiding their own true nature.
 
 ## Research Scope and Future Work
 
