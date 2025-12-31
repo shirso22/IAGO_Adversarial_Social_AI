@@ -1,4 +1,3 @@
-
 # IAGO: Adversarial Social Dynamics Simulation
 
 > *"I am not what I am."* — Iago, Othello
@@ -47,7 +46,7 @@ Accusations trigger trials. Trials can trigger **chain accusations** where the a
 
 ### Bimodal Outcomes
 
-![Distribution of Final Survivor Fraction](Ensemble_Survivor_Fraction_Histogram.png)
+![Distribution of Final Survivor Fraction](The_Village/sim_outputs/Ensemble%20Survivor%20Fraction%20Histogram.png)
 
 Ensemble simulations reveal a bimodal distribution: villages either survive mostly intact (~95%+ survival) or collapse catastrophically (~30% survival). Fewer than 5% of simulations land between 40-80% survival.
 
@@ -55,7 +54,7 @@ This pattern suggests a **phase transition** where small differences in initial 
 
 ### Early Divergence
 
-![Average Panic Level Over Time by Outcome](Mean_Panic_Level.png)
+![Average Panic Level Over Time by Outcome](The_Village/sim_outputs/Mean%20Panic%20Level.png)
 
 Trajectory divergence occurs within the first 25 days:
 
@@ -90,8 +89,8 @@ The mechanics being modeled—information cascades, trust network exploitation, 
 
 ## Technical Documentation
 
-- **[TECHNICAL_DEEP_DIVE.md](TECHNICAL_DEEP_DIVE.md)**: Complete system architecture, utility functions, trial mechanics, and configuration guide
-- **[README.md](README.md)** (simulation runner): Usage guide for running simulations with presets and batch execution
+- **[Reference.md](The_Village/files/Reference.md)**: Complete system architecture, utility functions, trial mechanics, and configuration guide
+- **[Simulation Runner README](The_Village/run/README.md)**: Usage guide for running simulations with presets and batch execution
 
 ### Quick Start
 
