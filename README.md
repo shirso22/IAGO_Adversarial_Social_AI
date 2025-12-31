@@ -2,7 +2,20 @@
 
 > *"I am not what I am."* — Iago, Othello
 
+## Table of Contents
+1. Motivation
+2. Simulator Design
+3. Results
+4. IAGO: Adversarial AI
+5. Technical Documentation
+6. Quickstart
+7. Research Scope
+8. Citation
+
+
+
 An agent-based simulation of a medieval village during the witch hunt era, designed as a training environment for an adversarial reinforcement learning agent. The simulator models social dynamics, information cascades, and institutional breakdown to study how communities destabilize under pressure.
+
 
 ---
 
