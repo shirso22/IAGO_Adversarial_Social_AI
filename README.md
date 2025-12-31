@@ -143,8 +143,10 @@ python main.py
 ```
 
 ---
+
 ## Citation
 
+```bibtex
 @software{iago_simulator,
   title={IAGO: Adversarial Social Dynamics Simulation},
   author={Shirsopratim Chattopadhyay},
