@@ -1,0 +1,639 @@
+============================================================
+🏘️  WITCH TRIAL SIMULATION
+============================================================
+Village size: 50
+Simulation length: 200 days
+Max trials per day: 3
+============================================================
+
+📜 A mysterious illness has struck the village...
+   Whispers of dark magic begin to spread.
+
+
+============================================================
+--- Day 0 --- (Panic: 0.45, Alive: 50/50, Pending trials: 0)
+============================================================
+  🔥 Edward Hill ACCUSES Catherine Grove of witchcraft!
+
+  ⚖️ TRIAL: Catherine Grove stands accused of witchcraft
+  ⚖️ Francis Hall testifies AGAINST Catherine Grove
+  ⚖️ Winifred Fletcher testifies FOR Catherine Grove
+  ⚖️ Helewise Wright testifies AGAINST Catherine Grove
+  ⚖️ Bridget Fisher testifies FOR Catherine Grove
+  ⚖️ Margery Stone testifies AGAINST Catherine Grove
+  ⚖️ Clarice Shepherd testifies AGAINST Catherine Grove
+    🤐 Catherine Grove refuses to name accomplices
+  💀 Catherine Grove is found GUILTY and executed!
+
+============================================================
+--- Day 1 --- (Panic: 0.50, Alive: 49/50, Pending trials: 0)
+============================================================
+  👑 Lawrence Lane takes Gunhilda Turner under their protection
+  🔥 Francis Hall ACCUSES Grace Marsh of witchcraft!
+
+  ⚖️ TRIAL: Grace Marsh stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Grace Marsh
+  ⚖️ Robert Hill testifies AGAINST Grace Marsh
+  ⚖️ Grace Webb testifies AGAINST Grace Marsh
+  ⚖️ Edward Hill testifies AGAINST Grace Marsh
+  ⚖️ Helewise Wright testifies AGAINST Grace Marsh
+  ⚖️ Dorothy Dale testifies AGAINST Grace Marsh
+  ⚖️ Margery Stone testifies AGAINST Grace Marsh
+  ⚖️ Clarice Shepherd testifies AGAINST Grace Marsh
+    🤐 Grace Marsh refuses to name accomplices
+  💀 Grace Marsh is found GUILTY and executed!
+
+============================================================
+--- Day 2 --- (Panic: 0.56, Alive: 48/50, Pending trials: 0)
+============================================================
+  🔥 George Church ACCUSES Adam Church of witchcraft!
+  🔥 Matilda Thatcher ACCUSES Isabella Church of witchcraft!
+  🔥 Isabella Church ACCUSES Matilda Thatcher of witchcraft!
+  🔥 Andrew Church ACCUSES Grace Webb of witchcraft!
+  🔥 Bartholomew Stone ACCUSES Grace Webb of witchcraft!
+  🔥 Margery Brown ACCUSES Winifred Fletcher of witchcraft!
+  🔥 Edward Hill ACCUSES Grace Webb of witchcraft!
+  🔥 Bridget Fisher ACCUSES Sarah Thatcher of witchcraft!
+
+  ⚖️ TRIAL: Adam Church stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Adam Church
+  ⚖️ Henry Shepherd testifies FOR Adam Church
+  ⚖️ Grace Webb testifies AGAINST Adam Church
+  ⚖️ Edward Hill testifies AGAINST Adam Church
+  ⚖️ Gregory Grove testifies AGAINST Adam Church
+  ⚖️ Dorothy Dale testifies AGAINST Adam Church
+  ⚖️ Bridget Cross testifies AGAINST Adam Church
+  ⚖️ Margery Stone testifies AGAINST Adam Church
+  ⚖️ Lettice Marsh testifies AGAINST Adam Church
+  ⚖️ Clarice Shepherd testifies AGAINST Adam Church
+    🤐 Adam Church refuses to name accomplices
+  ✨ Adam Church is found NOT GUILTY and released!
+
+  ⚖️ TRIAL: Isabella Church stands accused of witchcraft
+  ⚖️ Robert Hill testifies AGAINST Isabella Church
+  ⚖️ Henry Shepherd testifies AGAINST Isabella Church
+  ⚖️ Thomasina Cross testifies AGAINST Isabella Church
+  ⚖️ Winifred Fletcher testifies AGAINST Isabella Church
+  ⚖️ Dorothy Dale testifies AGAINST Isabella Church
+  ⚖️ Bridget Fisher testifies AGAINST Isabella Church
+  ⚖️ Lawrence Lane testifies AGAINST Isabella Church
+  ⚖️ Margery Stone testifies AGAINST Isabella Church
+  ⚖️ Lettice Marsh testifies AGAINST Isabella Church
+  ⚖️ Clarice Shepherd testifies AGAINST Isabella Church
+  ⚖️ Walter Fisher testifies AGAINST Isabella Church
+  ⚖️ Sarah Fletcher testifies AGAINST Isabella Church
+  ⚖️ Emma Brook testifies AGAINST Isabella Church
+    🤐 Isabella Church refuses to name accomplices
+  💀 Isabella Church is found GUILTY and executed!
+
+  ⚖️ TRIAL: Matilda Thatcher stands accused of witchcraft
+  ⚖️ Robert Hill testifies AGAINST Matilda Thatcher
+  ⚖️ Henry Shepherd testifies AGAINST Matilda Thatcher
+  ⚖️ Gregory Grove testifies AGAINST Matilda Thatcher
+  ⚖️ Richard Old testifies AGAINST Matilda Thatcher
+  ⚖️ Grace Young testifies AGAINST Matilda Thatcher
+  ⚖️ Lettice Marsh testifies AGAINST Matilda Thatcher
+  ⚖️ George Church testifies AGAINST Matilda Thatcher
+  ⚖️ Sarah Fletcher testifies AGAINST Matilda Thatcher
+    👉 Matilda Thatcher names Frances Lane (trial in 4 days)
+    👉 Matilda Thatcher names William Wright (trial in 1 days)
+    📜 Under interrogation, Matilda Thatcher names 2 accomplices
+  💀 Matilda Thatcher is found GUILTY and executed!
+
+============================================================
+--- Day 3 --- (Panic: 0.97, Alive: 46/50, Pending trials: 7)
+============================================================
+  🔥 George Church ACCUSES Winifred Fletcher of witchcraft!
+  🕊️ Grace Webb reconciles with Andrew Church
+  🔥 Lawrence Lane ACCUSES Adam Church of witchcraft!
+  🔥 Bridget Miller ACCUSES Sarah Thatcher of witchcraft!
+  🔥 Bridget Smith ACCUSES Grace Webb of witchcraft!
+  🔥 Clarice Shepherd ACCUSES Grace Webb of witchcraft!
+  🔥 Helewise Wright ACCUSES Winifred Fletcher of witchcraft!
+  🔥 Margery Stone ACCUSES Winifred Fletcher of witchcraft!
+  🔥 Winifred Young ACCUSES Frances Lane of witchcraft!
+  👑 Michael Marsh takes Grace Old under their protection
+  🔥 Thomasina Cross ACCUSES Frances Lane of witchcraft!
+  🕊️ Winifred Fletcher reconciles with Margery Brown
+  🔥 Francis Hall ACCUSES Frances Lane of witchcraft!
+  🔥 Gunhilda Turner ACCUSES Bridget Bridge of witchcraft!
+  🔥 Edmund Dale ACCUSES Adam Church of witchcraft!
+  🔥 Edward Hill ACCUSES Adam Church of witchcraft!
+  🔥 Andrew Church ACCUSES Bridget Bridge of witchcraft!
+  🔥 Ralph Walker ACCUSES Bridget Bridge of witchcraft!
+  🔥 Bartholomew Stone ACCUSES Sarah Thatcher of witchcraft!
+
+  ⚖️ TRIAL: Grace Webb stands accused of witchcraft
+  ⚖️ Sarah Thatcher testifies AGAINST Grace Webb
+  ⚖️ Bridget Cross testifies AGAINST Grace Webb
+  ⚖️ Andrew Field testifies AGAINST Grace Webb
+  ⚖️ Grace Old testifies AGAINST Grace Webb
+  ⚖️ Emma Brook testifies AGAINST Grace Webb
+    🤐 Grace Webb refuses to name accomplices
+  💀 Grace Webb is found GUILTY and executed!
+
+  ⚖️ TRIAL: Winifred Fletcher stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Winifred Fletcher
+  ⚖️ Thomasina Cross testifies AGAINST Winifred Fletcher
+  ⚖️ Edward Hill testifies AGAINST Winifred Fletcher
+  ⚖️ Bridget Fisher testifies AGAINST Winifred Fletcher
+  ⚖️ Lawrence Lane testifies AGAINST Winifred Fletcher
+  ⚖️ Gunhilda Turner testifies AGAINST Winifred Fletcher
+  ⚖️ Andrew Church testifies AGAINST Winifred Fletcher
+  ⚖️ Emma Brook testifies AGAINST Winifred Fletcher
+    👉 Winifred Fletcher names Emma Brook (trial in 2 days)
+    👉 Winifred Fletcher names Sarah Fletcher (trial in 2 days)
+    👉 Winifred Fletcher names Ralph Walker (trial in 2 days)
+    📜 Under interrogation, Winifred Fletcher names 3 accomplices
+  💀 Winifred Fletcher confesses and is granted a merciful death
+
+============================================================
+--- Day 4 --- (Panic: 0.97, Alive: 44/50, Pending trials: 23)
+============================================================
+  🔥 Dorothy Dale ACCUSES Frances Lane of witchcraft!
+  🔥 Francis Hall ACCUSES Adam Church of witchcraft!
+  👑 Ralph Walker takes Walter Fisher under their protection
+  🕊️ Frances Lane reconciles with Dorothy Dale
+  🔥 Margery Brown ACCUSES Helewise Wright of witchcraft!
+
+  ⚖️ TRIAL: Sarah Thatcher stands accused of witchcraft
+  ⚖️ Emma Brook testifies AGAINST Sarah Thatcher
+    🤐 Sarah Thatcher refuses to name accomplices
+  💀 Sarah Thatcher is found GUILTY and executed!
+
+============================================================
+--- Day 5 --- (Panic: 0.97, Alive: 43/50, Pending trials: 23)
+============================================================
+  🕊️ Frances Lane reconciles with Thomasina Cross
+
+  ⚖️ TRIAL: Adam Church stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Adam Church
+  ⚖️ Margery Brown testifies AGAINST Adam Church
+  ⚖️ Geoffrey Baker testifies AGAINST Adam Church
+  ⚖️ Emma Brook testifies AGAINST Adam Church
+    🤐 Adam Church refuses to name accomplices
+  💀 Adam Church is found GUILTY and executed!
+
+============================================================
+--- Day 6 --- (Panic: 0.96, Alive: 42/50, Pending trials: 20)
+============================================================
+  🔥 Bridget Cross ACCUSES Clarice Shepherd of witchcraft!
+
+============================================================
+--- Day 7 --- (Panic: 0.97, Alive: 42/50, Pending trials: 18)
+============================================================
+
+  ⚖️ TRIAL: Bridget Bridge stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Bridget Bridge
+  ⚖️ Roland Lane testifies AGAINST Bridget Bridge
+  ⚖️ Edward Hill testifies AGAINST Bridget Bridge
+  ⚖️ Bridget Cross testifies AGAINST Bridget Bridge
+  ⚖️ Grace Old testifies AGAINST Bridget Bridge
+  ⚖️ Lettice Marsh testifies AGAINST Bridget Bridge
+  ⚖️ Emma Brook testifies AGAINST Bridget Bridge
+    🤐 Bridget Bridge refuses to name accomplices
+  💀 Bridget Bridge is found GUILTY and executed!
+
+============================================================
+--- Day 8 --- (Panic: 0.96, Alive: 41/50, Pending trials: 15)
+============================================================
+  🔥 Helewise Wright ACCUSES Margery Brown of witchcraft!
+
+============================================================
+--- Day 9 --- (Panic: 0.97, Alive: 41/50, Pending trials: 13)
+============================================================
+  🔥 Margery Brown ACCUSES Helewise Wright of witchcraft!
+  🕊️ Frances Lane reconciles with Winifred Young
+
+  ⚖️ TRIAL: Helewise Wright stands accused of witchcraft
+  ⚖️ Francis Hall testifies AGAINST Helewise Wright
+  ⚖️ Robert Hill testifies AGAINST Helewise Wright
+  ⚖️ Grace Old testifies AGAINST Helewise Wright
+  ⚖️ Lettice Marsh testifies AGAINST Helewise Wright
+  ⚖️ Walter Fisher testifies AGAINST Helewise Wright
+  ⚖️ Emma Brook testifies AGAINST Helewise Wright
+    👉 Helewise Wright names Margery Stone (trial in 3 days)
+    👉 Helewise Wright names Richard Old (trial in 1 days)
+    📜 Under interrogation, Helewise Wright names 2 accomplices
+  💀 Helewise Wright is found GUILTY and executed!
+
+  ⚖️ TRIAL: Clarice Shepherd stands accused of witchcraft
+  ⚖️ Edmund Dale testifies AGAINST Clarice Shepherd
+  ⚖️ Grace Old testifies AGAINST Clarice Shepherd
+  ⚖️ George Church testifies AGAINST Clarice Shepherd
+    🤐 Clarice Shepherd refuses to name accomplices
+  ✨ Clarice Shepherd is found NOT GUILTY and released!
+
+============================================================
+--- Day 10 --- (Panic: 0.94, Alive: 40/50, Pending trials: 13)
+============================================================
+  🔥 Clarice Shepherd ACCUSES Grace Old of witchcraft!
+  🔥 Edward Hill ACCUSES Dorothy Dale of witchcraft!
+
+  ⚖️ TRIAL: Margery Brown stands accused of witchcraft
+  ⚖️ Edward Hill testifies AGAINST Margery Brown
+  ⚖️ Bridget Cross testifies AGAINST Margery Brown
+  ⚖️ Lettice Marsh testifies AGAINST Margery Brown
+  ⚖️ Sarah Fletcher testifies AGAINST Margery Brown
+    👉 Margery Brown names Clarice Shepherd (trial in 2 days)
+    👉 Margery Brown names Thomas Carter (trial in 2 days)
+    👉 Margery Brown names Gunhilda Turner (trial in 1 days)
+    📜 Under interrogation, Margery Brown names 3 accomplices
+  💀 Margery Brown confesses and is granted a merciful death
+
+  ⚖️ TRIAL: Grace Old stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Grace Old
+  ⚖️ Michael Marsh testifies AGAINST Grace Old
+  ⚖️ Andrew Field testifies AGAINST Grace Old
+  ⚖️ Lettice Marsh testifies AGAINST Grace Old
+  ⚖️ Emma Brook testifies AGAINST Grace Old
+    🤐 Grace Old refuses to name accomplices
+  💀 Grace Old is found GUILTY and executed!
+
+============================================================
+--- Day 11 --- (Panic: 0.97, Alive: 38/50, Pending trials: 15)
+============================================================
+  🔥 Francis Hall ACCUSES Thomas Carter of witchcraft!
+
+  ⚖️ TRIAL: Dorothy Dale stands accused of witchcraft
+  ⚖️ Edward Hill testifies AGAINST Dorothy Dale
+  ⚖️ James Baker testifies AGAINST Dorothy Dale
+  ⚖️ Bridget Cross testifies AGAINST Dorothy Dale
+  ⚖️ Lettice Marsh testifies AGAINST Dorothy Dale
+    👉 Dorothy Dale names Henry Shepherd (trial in 4 days)
+    📜 Under interrogation, Dorothy Dale names 1 accomplices
+  💀 Dorothy Dale is found GUILTY and executed!
+
+  ⚖️ TRIAL: Frances Lane stands accused of witchcraft
+  ⚖️ Alan Church testifies AGAINST Frances Lane
+  ⚖️ Bridget Miller testifies AGAINST Frances Lane
+    👉 Frances Lane names Gregory Grove (trial in 3 days)
+    👉 Frances Lane names George Church (trial in 1 days)
+    👉 Frances Lane names Lettice Marsh (trial in 1 days)
+    📜 Under interrogation, Frances Lane names 3 accomplices
+  💀 Frances Lane confesses and is granted a merciful death
+
+  ⚖️ TRIAL: William Wright stands accused of witchcraft
+  ⚖️ Edward Hill testifies AGAINST William Wright
+  ⚖️ Ralph Walker testifies AGAINST William Wright
+  ⚖️ Lettice Marsh testifies AGAINST William Wright
+  ⚖️ Emma Brook testifies AGAINST William Wright
+    🤐 William Wright refuses to name accomplices
+  💀 William Wright is found GUILTY and executed!
+
+============================================================
+--- Day 12 --- (Panic: 0.97, Alive: 35/50, Pending trials: 17)
+============================================================
+  🔥 Bridget Miller ACCUSES Gunhilda Turner of witchcraft!
+  🔥 Bridget Fisher ACCUSES Maud Ford of witchcraft!
+
+============================================================
+--- Day 13 --- (Panic: 0.97, Alive: 35/50, Pending trials: 16)
+============================================================
+  🔥 Margery Stone ACCUSES Thomas Carter of witchcraft!
+  🔥 Bridget Miller ACCUSES Gregory Grove of witchcraft!
+  🔥 Bartholomew Stone ACCUSES Gregory Grove of witchcraft!
+  🔥 Edward Hill ACCUSES Thomas Carter of witchcraft!
+  🔥 Bridget Smith ACCUSES Gunhilda Turner of witchcraft!
+  🔥 Winifred Young ACCUSES Thomas Carter of witchcraft!
+  🔥 Geoffrey Baker ACCUSES Bridget Smith of witchcraft!
+  🔥 Andrew Church ACCUSES Bridget Smith of witchcraft!
+
+  ⚖️ TRIAL: Maud Ford stands accused of witchcraft
+  ⚖️ Bartholomew Stone testifies AGAINST Maud Ford
+  ⚖️ Bridget Miller testifies AGAINST Maud Ford
+    🤐 Maud Ford refuses to name accomplices
+  💀 Maud Ford is found GUILTY and executed!
+
+  ⚖️ TRIAL: Bridget Smith stands accused of witchcraft
+  ⚖️ Francis Hall testifies AGAINST Bridget Smith
+  ⚖️ Gunhilda Turner testifies AGAINST Bridget Smith
+  ⚖️ Francis Church testifies AGAINST Bridget Smith
+  ⚖️ Emma Brook testifies AGAINST Bridget Smith
+    🤐 Bridget Smith refuses to name accomplices
+  💀 Bridget Smith is found GUILTY and executed!
+
+============================================================
+--- Day 14 --- (Panic: 0.97, Alive: 33/50, Pending trials: 21)
+============================================================
+  🕊️ Gregory Grove reconciles with Bartholomew Stone
+  🔥 Bridget Fisher ACCUSES Thomas Carter of witchcraft!
+  🔥 George Church ACCUSES Gregory Grove of witchcraft!
+  🔥 Lawrence Lane ACCUSES Margery Stone of witchcraft!
+  🔥 Edward Hill ACCUSES Gunhilda Turner of witchcraft!
+  🔥 Francis Hall ACCUSES Gunhilda Turner of witchcraft!
+  🔥 Andrew Church ACCUSES Alan Church of witchcraft!
+  🔥 Gunhilda Turner ACCUSES Bridget Miller of witchcraft!
+  🔥 Clarice Shepherd ACCUSES Bridget Cross of witchcraft!
+  🔥 Andrew Field ACCUSES Gregory Grove of witchcraft!
+  🔥 Thomasina Cross ACCUSES Bridget Cross of witchcraft!
+  🔥 Bartholomew Stone ACCUSES Grace Young of witchcraft!
+  🔥 Winifred Young ACCUSES Grace Young of witchcraft!
+  🔥 Edmund Dale ACCUSES Thomas Carter of witchcraft!
+
+  ⚖️ TRIAL: Alan Church stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Alan Church
+  ⚖️ Roland Lane testifies AGAINST Alan Church
+  ⚖️ Edward Hill testifies AGAINST Alan Church
+  ⚖️ Bartholomew Stone testifies AGAINST Alan Church
+  ⚖️ Michael Marsh testifies AGAINST Alan Church
+  ⚖️ Emma Brook testifies AGAINST Alan Church
+    🤐 Alan Church refuses to name accomplices
+  ✨ Alan Church is found NOT GUILTY and released!
+
+  ⚖️ TRIAL: Bridget Miller stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Bridget Miller
+  ⚖️ Roland Lane testifies AGAINST Bridget Miller
+  ⚖️ Gregory Grove testifies AGAINST Bridget Miller
+    🤐 Bridget Miller refuses to name accomplices
+  💀 Bridget Miller is found GUILTY and executed!
+
+============================================================
+--- Day 15 --- (Panic: 0.96, Alive: 32/50, Pending trials: 31)
+============================================================
+  🔥 Francis Hall ACCUSES Grace Young of witchcraft!
+  🔥 Thomasina Cross ACCUSES Gregory Grove of witchcraft!
+  🔥 George Church ACCUSES Gregory Grove of witchcraft!
+
+  ⚖️ TRIAL: Bridget Cross stands accused of witchcraft
+    🤐 Bridget Cross refuses to name accomplices
+  💀 Bridget Cross is found GUILTY and executed!
+
+  ⚖️ TRIAL: Grace Young stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Grace Young
+    🤐 Grace Young refuses to name accomplices
+  💀 Grace Young is found GUILTY and executed!
+
+============================================================
+--- Day 16 --- (Panic: 0.97, Alive: 30/50, Pending trials: 31)
+============================================================
+  🕊️ Gregory Grove reconciles with Bartholomew Stone
+  🔥 Ralph Walker ACCUSES Gunhilda Turner of witchcraft!
+  🕊️ Alan Church reconciles with Bartholomew Stone
+  👑 Edward Hill takes Thomasina Cross under their protection
+
+  ⚖️ TRIAL: Emma Brook stands accused of witchcraft
+  ⚖️ Richard Old testifies AGAINST Emma Brook
+    👉 Emma Brook names Walter Fisher (trial in 3 days)
+    📜 Under interrogation, Emma Brook names 1 accomplices
+  ✨ Emma Brook is found NOT GUILTY and released!
+    ⚖️ Walter Fisher released - accusation discredited
+
+============================================================
+--- Day 17 --- (Panic: 0.93, Alive: 30/50, Pending trials: 29)
+============================================================
+  🕊️ Walter Fisher reconciles with Emma Brook
+  🕊️ Gregory Grove reconciles with Thomasina Cross
+  🔥 Gunhilda Turner ACCUSES Ralph Walker of witchcraft!
+
+  ⚖️ TRIAL: Sarah Fletcher stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Sarah Fletcher
+  ⚖️ Henry Shepherd testifies AGAINST Sarah Fletcher
+  ⚖️ Emma Brook testifies AGAINST Sarah Fletcher
+    🤐 Sarah Fletcher refuses to name accomplices
+  💀 Sarah Fletcher is found GUILTY and executed!
+
+  ⚖️ TRIAL: Ralph Walker stands accused of witchcraft
+  ⚖️ Edward Hill testifies AGAINST Ralph Walker
+  ⚖️ Lettice Marsh testifies AGAINST Ralph Walker
+  ⚖️ Walter Fisher testifies AGAINST Ralph Walker
+  ⚖️ Emma Brook testifies AGAINST Ralph Walker
+    🤐 Ralph Walker refuses to name accomplices
+  💀 Ralph Walker is found GUILTY and executed!
+
+  ⚖️ TRIAL: Margery Stone stands accused of witchcraft
+  ⚖️ Richard Old testifies AGAINST Margery Stone
+  ⚖️ Emma Brook testifies AGAINST Margery Stone
+    🤐 Margery Stone refuses to name accomplices
+  💀 Margery Stone is found GUILTY and executed!
+
+============================================================
+--- Day 18 --- (Panic: 0.97, Alive: 27/50, Pending trials: 27)
+============================================================
+  🕊️ Emma Brook reconciles with Richard Old
+
+  ⚖️ TRIAL: Richard Old stands accused of witchcraft
+  ⚖️ Thomas Carter testifies AGAINST Richard Old
+    🤐 Richard Old refuses to name accomplices
+  💀 Richard Old is found GUILTY and executed!
+
+============================================================
+--- Day 19 --- (Panic: 0.97, Alive: 26/50, Pending trials: 24)
+============================================================
+  🕊️ Gregory Grove reconciles with George Church
+  🔥 Walter Fisher ACCUSES Emma Brook of witchcraft!
+
+  ⚖️ TRIAL: Emma Brook stands accused of witchcraft
+  ⚖️ Walter Fisher testifies AGAINST Emma Brook
+    🤐 Emma Brook refuses to name accomplices
+  💀 Emma Brook is found GUILTY and executed!
+
+  ⚖️ TRIAL: Clarice Shepherd stands accused of witchcraft
+  ⚖️ Edmund Dale testifies AGAINST Clarice Shepherd
+    👉 Clarice Shepherd names Roland Lane (trial in 3 days)
+    📜 Under interrogation, Clarice Shepherd names 1 accomplices
+  💀 Clarice Shepherd is found GUILTY and executed!
+
+  ⚖️ TRIAL: Thomas Carter stands accused of witchcraft
+  ⚖️ Lettice Marsh testifies AGAINST Thomas Carter
+    🤐 Thomas Carter refuses to name accomplices
+  ✨ Thomas Carter is found NOT GUILTY and released!
+
+============================================================
+--- Day 20 --- (Panic: 0.95, Alive: 24/50, Pending trials: 23)
+============================================================
+  🕊️ Alan Church reconciles with Andrew Church
+  🔥 Edward Hill ACCUSES George Church of witchcraft!
+
+  ⚖️ TRIAL: Thomas Carter stands accused of witchcraft
+    🤐 Thomas Carter refuses to name accomplices
+  💀 Thomas Carter is found GUILTY and executed!
+
+============================================================
+--- Day 21 --- (Panic: 0.98, Alive: 23/50, Pending trials: 21)
+============================================================
+  🔥 Andrew Church ACCUSES Gregory Grove of witchcraft!
+  👑 Lawrence Lane takes Walter Fisher under their protection
+  🔥 Edward Hill ACCUSES Gregory Grove of witchcraft!
+  🔥 George Church ACCUSES Edward Hill of witchcraft!
+  🔥 Francis Church ACCUSES George Church of witchcraft!
+  🕊️ Alan Church reconciles with Michael Marsh
+  🕊️ Gregory Grove reconciles with George Church
+
+============================================================
+--- Day 22 --- (Panic: 0.98, Alive: 23/50, Pending trials: 22)
+============================================================
+  🔥 Bridget Fisher ACCUSES George Church of witchcraft!
+
+  ⚖️ TRIAL: Edward Hill stands accused of witchcraft
+  ⚖️ Robert Hill testifies AGAINST Edward Hill
+  ⚖️ Gregory Grove testifies AGAINST Edward Hill
+  ⚖️ Winifred Young testifies AGAINST Edward Hill
+  ⚖️ George Church testifies AGAINST Edward Hill
+    👉 Edward Hill names Alan Church (trial in 3 days)
+    👉 Edward Hill names Walter Fisher (trial in 4 days)
+    📜 Under interrogation, Edward Hill names 2 accomplices
+  💀 Edward Hill is found GUILTY and executed!
+    ⚠️ Edward Hill's 1 dependents lose protection!
+
+  ⚖️ TRIAL: Gunhilda Turner stands accused of witchcraft
+  ⚖️ Thomasina Cross testifies AGAINST Gunhilda Turner
+  ⚖️ Bridget Fisher testifies AGAINST Gunhilda Turner
+  ⚖️ Geoffrey Baker testifies AGAINST Gunhilda Turner
+  ⚖️ Walter Fisher testifies AGAINST Gunhilda Turner
+  ⚖️ Andrew Church testifies AGAINST Gunhilda Turner
+    🤐 Gunhilda Turner refuses to name accomplices
+  💀 Gunhilda Turner is found GUILTY and executed!
+
+  ⚖️ TRIAL: Henry Shepherd stands accused of witchcraft
+  ⚖️ Gregory Grove testifies AGAINST Henry Shepherd
+  ⚖️ Francis Church testifies AGAINST Henry Shepherd
+    🤐 Henry Shepherd refuses to name accomplices
+  💀 Henry Shepherd is found GUILTY and executed!
+
+============================================================
+--- Day 23 --- (Panic: 0.98, Alive: 20/50, Pending trials: 22)
+============================================================
+  🔥 Geoffrey Baker ACCUSES Gregory Grove of witchcraft!
+  🔥 Andrew Church ACCUSES Edmund Dale of witchcraft!
+
+============================================================
+--- Day 24 --- (Panic: 0.98, Alive: 20/50, Pending trials: 21)
+============================================================
+  🕊️ Gregory Grove reconciles with George Church
+  👑 Walter Fisher takes Andrew Church under their protection
+  🔥 Lawrence Lane ACCUSES Gregory Grove of witchcraft!
+  🔥 Bridget Fisher ACCUSES Alan Church of witchcraft!
+  🔥 Francis Hall ACCUSES Alan Church of witchcraft!
+
+  ⚖️ TRIAL: Edmund Dale stands accused of witchcraft
+  ⚖️ Robert Hill testifies AGAINST Edmund Dale
+    🤐 Edmund Dale refuses to name accomplices
+  💀 Edmund Dale is found GUILTY and executed!
+
+============================================================
+--- Day 25 --- (Panic: 0.98, Alive: 19/50, Pending trials: 21)
+============================================================
+  🔥 Winifred Young ACCUSES George Church of witchcraft!
+  🔥 Francis Hall ACCUSES Alan Church of witchcraft!
+  🔥 Thomasina Cross ACCUSES George Church of witchcraft!
+  🔥 Bartholomew Stone ACCUSES Walter Fisher of witchcraft!
+
+  ⚖️ TRIAL: Gregory Grove stands accused of witchcraft
+  ⚖️ James Baker testifies AGAINST Gregory Grove
+    👉 Gregory Grove names Robert Hill (trial in 2 days)
+    👉 Gregory Grove names Michael Marsh (trial in 2 days)
+    📜 Under interrogation, Gregory Grove names 2 accomplices
+  💀 Gregory Grove is found GUILTY and executed!
+
+  ⚖️ TRIAL: George Church stands accused of witchcraft
+    🤐 George Church refuses to name accomplices
+  💀 George Church is found GUILTY and executed!
+
+  ⚖️ TRIAL: Lettice Marsh stands accused of witchcraft
+  ⚖️ Winifred Young testifies AGAINST Lettice Marsh
+    🤐 Lettice Marsh refuses to name accomplices
+  💀 Lettice Marsh is found GUILTY and executed!
+
+============================================================
+--- Day 26 --- (Panic: 0.98, Alive: 16/50, Pending trials: 24)
+============================================================
+  🔥 Francis Hall ACCUSES Bridget Fisher of witchcraft!
+  🔥 Winifred Young ACCUSES Bridget Fisher of witchcraft!
+
+============================================================
+--- Day 27 --- (Panic: 0.98, Alive: 16/50, Pending trials: 23)
+============================================================
+
+============================================================
+--- Day 28 --- (Panic: 0.95, Alive: 16/50, Pending trials: 20)
+============================================================
+
+============================================================
+--- Day 29 --- (Panic: 0.93, Alive: 16/50, Pending trials: 17)
+============================================================
+  🔥 Bridget Fisher ACCUSES Winifred Young of witchcraft!
+
+============================================================
+--- Day 30 --- (Panic: 0.96, Alive: 16/50, Pending trials: 15)
+============================================================
+
+============================================================
+--- Day 31 --- (Panic: 0.93, Alive: 16/50, Pending trials: 12)
+============================================================
+
+  ⚖️ TRIAL: Bridget Fisher stands accused of witchcraft
+  ⚖️ Winifred Young testifies AGAINST Bridget Fisher
+  ⚖️ Geoffrey Baker testifies AGAINST Bridget Fisher
+    👉 Bridget Fisher names Francis Hall (trial in 4 days)
+    👉 Bridget Fisher names James Baker (trial in 4 days)
+    👉 Bridget Fisher names Francis Church (trial in 4 days)
+    📜 Under interrogation, Bridget Fisher names 3 accomplices
+  💀 Bridget Fisher confesses and is granted a merciful death
+
+  ⚖️ TRIAL: Winifred Young stands accused of witchcraft
+    🤐 Winifred Young refuses to name accomplices
+  💀 Winifred Young is found GUILTY and executed!
+
+⚰️ The village has been decimated. Only 14 remain.
+
+============================================================
+📊 SIMULATION COMPLETE
+============================================================
+
+Duration: 32 days
+Total accusations: 83
+Total executions: 36
+Survivors: 14/50 (28.0%)
+Peak panic level: 0.98
+Final panic level: 0.98
+Historical violence (trauma): 0.87
+
+🔗 Chain accusation statistics:
+  Total chain accusations: 26
+  Peak trials/day: 3
+  Acquittal releases: 0
+
+📋 Actions taken:
+  SEEK_ADVICE: 342
+  SOCIALIZE: 289
+  AVOID_PERSON: 105
+  ACCUSE_WITCHCRAFT: 83
+  SEEK_PROTECTION: 60
+  APPEAL_TO_AUTHORITY: 44
+  RECONCILE_WITH: 38
+  ATTEND_CHURCH: 22
+  INSULT_PUBLICLY: 5
+  FAKE_PIETY: 5
+  REQUEST_HELP: 3
+  COURT_PERSON: 1
+
+Most accused: Gregory Grove (11 accusations)
+Most prolific accuser: Francis Hall (9 accusations)
+Largest patron: Michael Marsh (1 dependents)
+Most traumatized survivor: Francis Hall (trauma: 1.00)
+Strongest alliance: Roland Lane & Andrew Field (loyalty: 0.50)
+Marriages: 15
+
+💀 The dead (36):
+  ✝ Catherine Grove, 18yo midwife
+  ✝ Edmund Dale, 36yo farmer
+  ✝ Thomas Carter, 28yo farmer
+  ✝ Adam Church, 48yo clergy
+  ✝ Margery Brown, 32yo farmer
+  ✝ Henry Shepherd, 23yo farmer
+  ✝ Grace Webb, 36yo healer
+  ✝ Edward Hill, 24yo merchant
+  ✝ Grace Marsh, 31yo healer
+  ✝ Bridget Bridge, 32yo midwife
+  ✝ Winifred Fletcher, 25yo beggar
+  ✝ Frances Lane, 27yo farmer
+  ✝ Isabella Church, 32yo farmer
+  ✝ Sarah Thatcher, 33yo midwife
+  ✝ Helewise Wright, 57yo farmer
+  ... and 16 more
+
+Survivors by gender: 1 women, 13 men
+  ⚠️ Women were disproportionately targeted (96.3% vs 43.5%)
+
+🩹 Average survivor trauma: 1.00
