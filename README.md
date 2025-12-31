@@ -1,37 +1,161 @@
 
-# IAGO: An Adversarial AI agent for social dynamics
+# IAGO: Adversarial Social Dynamics Simulation
 
-## Medieval Village during Witch Hunt Era Simulator
+> *"I am not what I am."* — Iago, Othello
 
-This models a medieval village during the Witch Hunt era as a graph. Nodes represent villagers, edges represent relationships between them (family, marriage, economic, etc). 
+An agent-based simulation of a medieval village during the witch hunt era, designed as a training environment for an adversarial reinforcement learning agent. The simulator models social dynamics, information cascades, and institutional breakdown to study how communities destabilize under pressure.
 
-Villager personalities are modelled using Big 5, Dark Triad and Seven Deadly Sins framework. Their emotional states (anger, fear, stress, romantic attraction to others, etc) are also tracked. Personality, current emotional state and overall village dynamics
-determine actions and interactions with others (accusing someone of witchcraft, publicly defending someone, going to church, gossip, etc) 
+---
 
-Village level dynamics, such as mass hysteria, institutional trust, collective stress, witch trial mechanics, etc are implemented.
+## The Simulator
 
-The goal is to model a robust social environment, taking inspiration from real historical medieval village dynamics. The intention is to observe emergent behavior, such as cascade accusations that tear the community part, mob rule due to complete erosion of institutional trust, etc
+This project models a medieval village as a social graph where nodes represent villagers and edges represent relationships.
 
-Read **Reference.md** in **files** for a technical deep dive into the simulator design/architecture.
+### Agent Model
 
+**Villagers** are modeled with:
+- **Personality**: Big Five traits, Dark Triad tendencies, and Seven Deadly Sins
+- **Emotional State**: Fear, anger, grief, desire, resentment, and directed emotions (hatreds, loyalties, suspicions) toward specific individuals
+- **Social Position**: Status, wealth, reputation, and conformity score
 
-## Adversarial RL based agent: IAGO (under active development)
+**Relationships** form a multi-edge graph supporting:
+- Family bonds, marriages, friendships
+- Economic ties and rivalries  
+- Patronage networks (protection in exchange for loyalty)
 
-Named after Shakespeare's famous villan, IAGO is an adversarial RL agent that will be just another villager, but learn to weaponize disinformation, gossip, accusations, etc to systematically destabilize the Village, for example through triggering cascade accusations 
-by targeting the right villagers at the right time. 
-While staying completely undetected themselves, like his literary counterpart. 
+**Village Dynamics** capture macro-level phenomena:
+- Panic propagation and decay
+- Institutional trust
+- Rumor saturation
+- External stressors (plague, famine, inquisitor visits)
 
-IAGO has to infer hidden psychological, emotional and personality states of villagers through observable actions, while successfully hiding their own true nature.
+### Simulation Mechanics
 
-## Research Scope and Future Work
+Each timestep, villagers evaluate available actions through a utility function combining personality, emotional state, relationships, and environmental factors. Available actions include:
 
-This simulator is intended as an experimental environment rather than a finished model. Extensions can include:
+- Accusing someone of witchcraft
+- Spreading rumors, forming alliances, seeking protection
+- Testifying for or against the accused
+- Courting romantic partners
+- Attending church
 
-1) Training and evaluating adversarial and defensive agents. One agent tries to destabilize while the other tries to stabilize the community.
+Accusations trigger trials. Trials can trigger **chain accusations** where the accused names "accomplices" under duress, potentially creating cascade effects.
 
-2) Systematic assessment of intervention and detection strategies.
+---
 
-3) Having the Villagers be adaptive and more resilient to manipualation.
+## Simulation Results
 
-4) Integration with language-model interfaces for explicit articulation of manipulation strategies.
+### Bimodal Outcomes
 
+![Distribution of Final Survivor Fraction](Ensemble_Survivor_Fraction_Histogram.png)
+
+Ensemble simulations reveal a bimodal distribution: villages either survive mostly intact (~95%+ survival) or collapse catastrophically (~30% survival). Fewer than 5% of simulations land between 40-80% survival.
+
+This pattern suggests a **phase transition** where small differences in initial conditions cascade into radically different outcomes.
+
+### Early Divergence
+
+![Average Panic Level Over Time by Outcome](Mean_Panic_Level.png)
+
+Trajectory divergence occurs within the first 25 days:
+
+- **High-survival runs** (green, n=55): Panic decays from 0.35 to near-zero by day 50. The system reaches equilibrium without sustained accusations.
+
+- **Low-survival runs** (red, n=39): Panic rises to 0.9+ within two weeks and remains elevated. Circuit breakers (trial capacity limits, system fatigue, elite intervention) slow the cascade but cannot stop it.
+
+The narrow confidence bands indicate that once a trajectory is established, outcomes become highly predictable.
+
+---
+
+## IAGO: The Adversarial Agent
+
+*Under active development*
+
+Named after Shakespeare's villain, IAGO is a reinforcement learning agent that operates as an ordinary villager with the objective of destabilizing the community while remaining undetected.
+
+### Design Challenges
+
+IAGO must:
+
+1. **Infer hidden states**: Villager personalities and emotional states are only partially observable through actions
+2. **Identify leverage points**: The bimodal outcome distribution suggests critical nodes and timing windows exist
+3. **Exploit social mechanics**: Gossip, strategic accusations, alliance manipulation, testimony timing
+4. **Maintain cover**: Avoid the credibility loss and suspicion that come from being too active or too connected to the executed
+
+### Motivation
+
+The mechanics being modeled—information cascades, trust network exploitation, strategic ambiguity—appear in many contexts beyond historical witch trials. IAGO provides a framework for understanding these dynamics through adversarial optimization.
+
+---
+
+## Technical Documentation
+
+- **[TECHNICAL_DEEP_DIVE.md](TECHNICAL_DEEP_DIVE.md)**: Complete system architecture, utility functions, trial mechanics, and configuration guide
+- **[README.md](README.md)** (simulation runner): Usage guide for running simulations with presets and batch execution
+
+### Quick Start
+
+```bash
+# Run with defaults
+python simulation_runner.py
+
+# Run a high-panic scenario
+python simulation_runner.py --preset chaos
+
+# Batch run for statistical analysis
+python simulation_runner.py --batch 100 --quiet
+
+# Parameter sweep
+python simulation_runner.py --sweep
+```
+
+---
+
+## Research Scope & Future Work
+
+This simulator is an experimental environment for studying social dynamics and training adversarial agents.
+
+### Planned Extensions
+
+1. **Adversarial-Defensive Training**: Train competing agents—one attempting to destabilize, another attempting to stabilize the community.
+
+2. **Intervention Strategies**: Evaluate minimum interventions required to shift trajectories, including early warning detection and network hub protection.
+
+3. **Adaptive Villagers**: Implement learning mechanisms so villagers update beliefs about manipulation likelihood based on outcomes.
+
+4. **LLM Integration**: Replace IAGO's learned policy with a language model that articulates manipulation strategies, enabling interpretability research.
+
+5. **Real Network Topologies**: Initialize from empirical social network data to study vulnerability profiles of different community structures.
+
+---
+
+## Installation
+
+```bash
+# Clone repository
+git clone https://github.com/[your-repo]/iago-simulator.git
+cd iago-simulator
+
+# Install dependencies
+pip install numpy
+
+# Run simulation
+python main.py
+```
+
+---
+
+## Citation
+
+```bibtex
+@software{iago_simulator,
+  title={IAGO: Adversarial Social Dynamics Simulation},
+  author={[Your Name]},
+  year={2025},
+  url={https://github.com/[your-repo]/iago-simulator}
+}
+```
+
+---
+
+*"And what's he then that says I play the villain?"*
