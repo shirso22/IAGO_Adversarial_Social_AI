@@ -12,6 +12,8 @@ Village level dynamics, such as mass hysteria, institutional trust, collective s
 
 The goal is to model a robust social environment, taking inspiration from real historical medieval village dynamics. The intention is to observe emergent behavior, such as cascade accusations that tear the community part, mob rule due to complete erosion of institutional trust, etc
 
+Read **Reference.md** in **files** for a technical deep dive into the simulator design/architecture.
+
 
 ## Adversarial RL based agent: IAGO (under active development)
 
