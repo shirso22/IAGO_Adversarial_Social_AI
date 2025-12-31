@@ -1,6 +1,6 @@
 import numpy as np
-from typing import List, Dict
-import sys 
+from typing import List, Dict, Tuple
+import sys
 
 # ============================================================================
 # SIMULATION CONFIGURATION
@@ -9,8 +9,8 @@ import sys
 
 VILLAGE_POPULATION = 50          # Number of villagers (10-200 reasonable range)
 SIMULATION_LENGTH = 200          # Maximum days to simulate
-RANDOM_SEED = 100                 # For reproducibility 
-INITIAL_PANIC = 0.3             # Starting panic level (0.0-1.0)
+RANDOM_SEED = 696                 # For reproducibility (901)
+INITIAL_PANIC = 0.35             # Starting panic level (0.0-1.0)
 VERBOSE_OUTPUT = True            # Print detailed event log
 PRINT_TO_CONSOLE = True         # Set to True to print full simulation output to console
 
@@ -28,6 +28,14 @@ from Relationships import Relationship, RelationshipType
 from Actions import ActionType, Action
 from ActionSelection import select_action, get_testimony_actions
 from ActionExecution import execute_action
+from ChainAccusations import (
+    extract_chain_accusations,
+    get_chain_accusation_guilt_modifier,
+    handle_acquittal_cascade,
+    create_trial_schedule,
+    TrialSchedule,
+    CHAIN_CONFIG,
+)
 from Utils import (
     get_vulnerability,
     get_accusation_credibility,
@@ -40,7 +48,7 @@ from Utils import (
 # TRIAL SYSTEM
 # ============================================================================
 
-def gather_testimony(accused_id: int, state: VillageState, rng: np.random.RandomState):
+def gather_testimony(accused_id: int, state: VillageState, rng: np.random.RandomState, verbose: bool = False):
     """
     Before a trial, give villagers a chance to testify for or against.
     This happens separately from the main action loop.
@@ -57,44 +65,64 @@ def gather_testimony(accused_id: int, state: VillageState, rng: np.random.Random
         testimony = get_testimony_actions(villager, accused_id, state, rng)
         if testimony:
             action_type, target_id = testimony
-            execute_action(villager, action_type, target_id, state, rng, verbose=True)
+            execute_action(villager, action_type, target_id, state, rng, verbose=verbose)
 
 
-def conduct_trial(accused_id: int, state: VillageState, rng: np.random.RandomState) -> bool:
+def conduct_trial(
+    accused_id: int,
+    state: VillageState,
+    trial_schedule: TrialSchedule,
+    rng: np.random.RandomState,
+    verbose: bool = False
+) -> bool:
     """Conduct a trial. Returns True if convicted."""
 
     accused = state.villagers[accused_id]
     accused.is_on_trial = True
 
-    print(f"\n  ⚖️ TRIAL: {accused.name} stands accused of witchcraft")
+    # Clear from schedule
+    trial_schedule.clear_scheduled(accused_id)
+
+    if verbose:
+        print(f"\n  ⚖️ TRIAL: {accused.name} stands accused of witchcraft")
 
     # Gather testimony
-    gather_testimony(accused_id, state, rng)
+    gather_testimony(accused_id, state, rng, verbose=verbose)
+
+    # Chain accusations with circuit breakers
+    pressure_level = 0.3 + state.panic_level * 0.25 + min(accused.times_accused_total * 0.08, 0.15)
+
+    chain_result = extract_chain_accusations(
+        accused=accused,
+        state=state,
+        trial_schedule=trial_schedule,
+        rng=rng,
+        pressure_level=pressure_level,
+        verbose=verbose
+    )
 
     # Base conviction probability
     guilt_score = 0.3
 
-    # Vulnerability increases conviction
+    # Vulnerability
     guilt_score += get_vulnerability(accused, state) * 0.25
 
-    # Number of accusers matters
+    # Number of accusers
     num_accusers = len(set(accused.accusations_received))
     guilt_score += min(num_accusers * 0.08, 0.25)
 
-    # Social status provides protection
+    # Social status protection
     guilt_score -= accused.social_status * 0.2
 
-    # Count testimony
+    # Testimony
     testimony_against = state.__dict__.get('testimony_against', {}).get(accused_id, [])
     testimony_for = state.__dict__.get('testimony_for', {}).get(accused_id, [])
     defenders = state.__dict__.get('defenders', {}).get(accused_id, [])
 
-    # Testimony and defenders affect outcome
     guilt_score += len(testimony_against) * 0.08
     guilt_score -= len(testimony_for) * 0.06
     guilt_score -= len(defenders) * 0.05
 
-    # Weigh testimony by social status
     for witness_id in testimony_against:
         witness = state.villagers.get(witness_id)
         if witness:
@@ -105,13 +133,16 @@ def conduct_trial(accused_id: int, state: VillageState, rng: np.random.RandomSta
         if witness:
             guilt_score -= witness.social_status * 0.03
 
-    # Panic increases convictions
+    # Confession modifier
+    guilt_score += get_chain_accusation_guilt_modifier(chain_result)
+
+    # Panic
     guilt_score += state.panic_level * 0.15
 
-    # Trust in authority affects fair trials (high trust = more fair = lower conviction)
+    # Trust in authority
     guilt_score -= (state.trust_in_authority - 0.5) * 0.1
 
-    # Gathered evidence against accused
+    # Evidence
     total_evidence = sum(
         v.__dict__.get('gathered_evidence', {}).get(accused_id, 0)
         for v in state.villagers.values()
@@ -119,14 +150,14 @@ def conduct_trial(accused_id: int, state: VillageState, rng: np.random.RandomSta
     guilt_score += min(total_evidence * 0.5, 0.2)
 
     guilt_score = np.clip(guilt_score, 0.1, 0.9)
-
     convicted = rng.random() < guilt_score
 
-    # Clean up trial state
+    cooperative_execution = chain_result.reduced_sentence and convicted
+
+    # Clean up
     accused.is_on_trial = False
     accused.is_accused_currently = False
 
-    # Clear testimony records for this trial
     if 'testimony_against' in state.__dict__ and accused_id in state.__dict__['testimony_against']:
         del state.__dict__['testimony_against'][accused_id]
     if 'testimony_for' in state.__dict__ and accused_id in state.__dict__['testimony_for']:
@@ -135,40 +166,41 @@ def conduct_trial(accused_id: int, state: VillageState, rng: np.random.RandomSta
         del state.__dict__['defenders'][accused_id]
 
     if convicted:
-        print(f"  💀 {accused.name} is found GUILTY and executed!")
+        if verbose:
+            if cooperative_execution:
+                print(f"  💀 {accused.name} confesses and is granted a merciful death")
+            else:
+                print(f"  💀 {accused.name} is found GUILTY and executed!")
+
         accused.is_alive = False
         state.recent_deaths.append((state.timestep, accused_id))
         state.total_executions += 1
         state.recent_execution_timestamps.append(state.timestep)
 
-        # HISTORICAL VIOLENCE - this execution leaves a scar on the village
-        state.historical_violence = min(1.0, state.historical_violence + 0.03)  # Was 0.1
+        violence_increment = 0.02 if cooperative_execution else 0.03
+        state.historical_violence = min(1.0, state.historical_violence + violence_increment)
 
-        # Aftermath
         state.panic_level = min(1.0, state.panic_level + 0.02)
         state.social_cohesion = max(0.0, state.social_cohesion - 0.05)
 
-        # PATRON COLLAPSE - if executed was a patron, cascade effects
         if accused.dependents:
             from Utils import handle_patron_collapse
-            print(f"    ⚠️ {accused.name}'s {len(accused.dependents)} dependents lose protection!")
+            if verbose:
+                print(f"    ⚠️ {accused.name}'s {len(accused.dependents)} dependents lose protection!")
             handle_patron_collapse(accused, state)
 
-        # Clear accused from anyone's patron
         for v in state.villagers.values():
             if v.patron_id == accused_id:
                 v.patron_id = None
                 v.emotional_state.fear = min(1.0, v.emotional_state.fear + 0.2)
 
-        # TRAUMA - everyone who witnessed is affected
+        trauma_increment = 0.03 if cooperative_execution else 0.05
         for v in state.villagers.values():
             if v.is_alive and v.id != accused_id:
-                # Witnessing execution increases trauma
                 v.witnessed_executions += 1
-                v.trauma_score = min(1.0, v.trauma_score + 0.05)
-                v.emotional_state.fear = min(1.0, v.emotional_state.fear + 0.05)
+                v.trauma_score = min(1.0, v.trauma_score + trauma_increment)
+                v.emotional_state.fear = min(1.0, v.emotional_state.fear + trauma_increment)
 
-        # Traumatize family and allies more severely
         for (s, t), rel in state.relationships.items():
             if s == accused_id or t == accused_id:
                 other_id = t if s == accused_id else s
@@ -178,134 +210,131 @@ def conduct_trial(accused_id: int, state: VillageState, rng: np.random.RandomSta
                         other.emotional_state.grief = min(1.0, other.emotional_state.grief + 0.5)
                         other.emotional_state.fear = min(1.0, other.emotional_state.fear + 0.3)
                         other.stress = min(1.0, other.stress + 0.3)
-                        # Family executions leave permanent scars
                         other.family_executions += 1
                         other.trauma_score = min(1.0, other.trauma_score + 0.3)
                     elif RelationshipType.FRIENDSHIP in rel.relationship_types:
                         other.emotional_state.grief = min(1.0, other.emotional_state.grief + 0.2)
                         other.emotional_state.fear = min(1.0, other.emotional_state.fear + 0.15)
-                        other.trauma_score = min(1.0, other.trauma_score + 0.1)
     else:
-        print(f"  ✨ {accused.name} is found NOT GUILTY and released!")
+        if verbose:
+            print(f"  ✨ {accused.name} is found NOT GUILTY and released!")
         accused.reputation = min(1.0, accused.reputation + 0.1)
         state.panic_level = max(0.0, state.panic_level - 0.03)
 
-        # Those who testified against failed - slight reputation hit
         for witness_id in testimony_against:
             witness = state.villagers.get(witness_id)
             if witness:
                 witness.reputation = max(0.0, witness.reputation - 0.02)
 
-    return convicted
+        # CASCADE BREAKER: Acquittal may release chain-accused
+        released = handle_acquittal_cascade(
+            accused_id, state, trial_schedule, rng, verbose=verbose
+        )
+        if released:
+            state.panic_level = max(0.0, state.panic_level - len(released) * 0.02)
 
+    return convicted
 
 # ============================================================================
 # MAIN SIMULATION LOOP
 # ============================================================================
 
 def run_simulation(
-    village_size: int = None,
-    num_timesteps: int = None,
-    seed: int = None,
-    initial_panic: float = None,
-    verbose: bool = None,
-    print_to_console: bool = None
-):
-    """Run the witch trial simulation"""
-
-    # Use config values if not explicitly provided
-    village_size = village_size if village_size is not None else VILLAGE_POPULATION
-    num_timesteps = num_timesteps if num_timesteps is not None else SIMULATION_LENGTH
-    seed = seed if seed is not None else RANDOM_SEED
-    initial_panic = initial_panic if initial_panic is not None else INITIAL_PANIC
-    verbose = verbose if verbose is not None else VERBOSE_OUTPUT
-    print_to_console = print_to_console if print_to_console is not None else PRINT_TO_CONSOLE
+    village_size: int = VILLAGE_POPULATION,
+    max_steps: int = SIMULATION_LENGTH,
+    seed: int = RANDOM_SEED,
+    initial_panic: float = INITIAL_PANIC,
+    verbose: bool = VERBOSE_OUTPUT,
+    print_to_console: bool = False
+) -> Tuple[VillageState, Dict]:
+    """Run the witch trial simulation with circuit breakers."""
 
     rng = np.random.RandomState(seed)
+    state = initialize_village(size=village_size, seed=seed)
+    state.panic_level = initial_panic
+
+    # ========== NEW: Create trial schedule ==========
+    trial_schedule = create_trial_schedule()
+    # ================================================
+
+    stats = {
+        'accusations_per_timestep': [],
+        'deaths_per_timestep': [],
+        'panic_over_time': [],
+        'alive_count': [],
+        'actions_taken': {},
+        'historical_violence_over_time': [],
+        'stressors_triggered': [],
+        # NEW: Track cascade metrics
+        'chain_accusations_per_day': [],
+        'trials_per_day': [],
+        'acquittal_releases': 0,
+    }
 
     if verbose:
         print("=" * 60)
         print("🏘️  WITCH TRIAL SIMULATION")
         print("=" * 60)
         print(f"Village size: {village_size}")
-        print(f"Simulation length: {num_timesteps} days")
+        print(f"Simulation length: {max_steps} days")
+        print(f"Max trials per day: {CHAIN_CONFIG['max_trials_per_day']}")
         print("=" * 60)
-
-    # Initialize
-    state = initialize_village(village_size, seed)
-    state.panic_level = initial_panic
-
-    # Statistics tracking
-    stats = {
-        'accusations_per_timestep': [],
-        'deaths_per_timestep': [],
-        'panic_over_time': [],
-        'alive_count': [],
-        'actions_taken': {},  # Track action frequency
-        'stressors_triggered': [],  # Track external stressors
-        'historical_violence_over_time': [],  # Track trauma accumulation
-    }
-
-    # Seed initial panic with an event
-    if initial_panic > 0.2:
         print("\n📜 A mysterious illness has struck the village...")
         print("   Whispers of dark magic begin to spread.\n")
 
-    # Main loop
-    for t in range(num_timesteps):
+    for t in range(max_steps):
         state.timestep = t
         accusations_this_step = 0
         deaths_this_step = 0
 
-        alive_count = sum(1 for v in state.villagers.values() if v.is_alive)
+        if verbose:
+            alive = sum(1 for v in state.villagers.values() if v.is_alive)
+            pending_trials = len(state.trial_queue)
+            print(f"\n{'=' * 60}")
+            print(f"--- Day {t} --- (Panic: {state.panic_level:.2f}, Alive: {alive}/{village_size}, Pending trials: {pending_trials})")
+            print(f"=" * 60)
 
-        if verbose and t % 10 == 0:
-            print(f"\n{'='*60}")
-            print(f"--- Day {t} --- (Panic: {state.panic_level:.2f}, Alive: {alive_count}/{village_size})")
-            print(f"{'='*60}")
+        # Action phase
+        living = [v for v in state.villagers.values() if v.is_alive and not v.is_imprisoned]
+        action_order = rng.permutation(len(living))
 
-        # Each villager takes an action
-        alive_villagers = [v for v in state.villagers.values()
-                         if v.is_alive and not v.is_imprisoned]
-        rng.shuffle(alive_villagers)
+        for idx in action_order:
+            actor = living[idx]
+            action_type, target_id = select_action(actor, state, rng)
 
-        daily_actions = []
+            if action_type == ActionType.ACCUSE_WITCHCRAFT:
+                accusations_this_step += 1
 
-        for villager in alive_villagers:
-            action_type, target_id = select_action(villager, state, rng)
+            execute_action(actor, action_type, target_id, state, rng, verbose=verbose)
 
-            if action_type != ActionType.PASS:
-                success = execute_action(villager, action_type, target_id, state, rng,
-                                        verbose=(verbose and action_type in [
-                                            ActionType.ACCUSE_WITCHCRAFT,
-                                            ActionType.COUNTER_ACCUSE,
-                                            ActionType.DEFEND_PERSON,
-                                            ActionType.FORM_ALLIANCE,
-                                            ActionType.BREAK_ALLIANCE,
-                                            ActionType.SHARE_RESOURCES,
-                                            ActionType.PROPOSE_MARRIAGE,
-                                            ActionType.FLEE_VILLAGE,
-                                            ActionType.SEEK_PROTECTION,
-                                        ]))
+            action_name = action_type.name
+            stats['actions_taken'][action_name] = stats['actions_taken'].get(action_name, 0) + 1
 
-                daily_actions.append((action_type.name, success))
+        # ========== UPDATED: Trial phase with scheduling ==========
+        # Get trials for today (respects capacity and scheduling)
+        trials_today = trial_schedule.get_trials_for_day(t, state.trial_queue)
 
-                if action_type == ActionType.ACCUSE_WITCHCRAFT and success:
-                    accusations_this_step += 1
+        # Remove from queue
+        for tid in trials_today:
+            if tid in state.trial_queue:
+                state.trial_queue.remove(tid)
 
-                # Track action frequency
-                action_name = action_type.name
-                stats['actions_taken'][action_name] = stats['actions_taken'].get(action_name, 0) + 1
-
-        # Process trials
-        trials_today = list(state.trial_queue)  # Copy to avoid modification during iteration
-        state.trial_queue = []
-
+        chain_accusations_today = 0
         for accused_id in trials_today:
             if state.villagers[accused_id].is_alive:
-                convicted = conduct_trial(accused_id, state, rng)
+                # Pass trial_schedule to conduct_trial
+                convicted = conduct_trial(accused_id, state, trial_schedule, rng, verbose=verbose)
                 if convicted:
                     deaths_this_step += 1
+                # Count chain accusations (approximation)
+                chain_accusations_today += len([
+                    a for a in state.recent_accusations
+                    if a[0] == t and a[1] == accused_id
+                ])
+
+        stats['chain_accusations_per_day'].append(chain_accusations_today)
+        stats['trials_per_day'].append(len(trials_today))
+        # =========================================================
 
         # Update states
         update_village_state(state, rng)
@@ -318,25 +347,26 @@ def run_simulation(
         stats['alive_count'].append(sum(1 for v in state.villagers.values() if v.is_alive))
         stats['historical_violence_over_time'].append(state.historical_violence)
 
-        # Log any active stressors
         for stressor in state.active_stressors:
             if stressor not in stats['stressors_triggered']:
                 stats['stressors_triggered'].append(stressor)
 
-        # Check for simulation end conditions
+        # End conditions
         alive = sum(1 for v in state.villagers.values() if v.is_alive)
         if alive < village_size * MIN_SURVIVAL_RATE:
             if verbose:
                 print(f"\n⚰️ The village has been decimated. Only {alive} remain.")
             break
 
-        # If panic drops to near zero and no recent activity, simulation might stabilize
-        if t > PEACE_THRESHOLD_DAYS and state.panic_level < PEACE_PANIC_LEVEL and sum(stats['accusations_per_timestep'][-10:]) == 0:
+        # Peace condition - also check no pending trials
+        if (t > PEACE_THRESHOLD_DAYS and
+            state.panic_level < PEACE_PANIC_LEVEL and
+            sum(stats['accusations_per_timestep'][-10:]) == 0 and
+            len(state.trial_queue) == 0):
             if verbose:
                 print(f"\n🕊️ Peace has returned to the village after {t} days.")
             break
 
-    # Final report
     if verbose:
         print_final_report(state, stats, village_size)
 
@@ -360,6 +390,14 @@ def print_final_report(state: VillageState, stats: Dict, village_size: int):
     print(f"Peak panic level: {max(stats['panic_over_time']):.2f}")
     print(f"Final panic level: {state.panic_level:.2f}")
     print(f"Historical violence (trauma): {state.historical_violence:.2f}")
+
+    # NEW: Cascade metrics
+    total_chain = sum(stats.get('chain_accusations_per_day', []))
+    if total_chain > 0:
+        print(f"\n🔗 Chain accusation statistics:")
+        print(f"  Total chain accusations: {total_chain}")
+        print(f"  Peak trials/day: {max(stats.get('trials_per_day', [0]))}")
+        print(f"  Acquittal releases: {stats.get('acquittal_releases', 0)}")
 
     # Stressor history
     if stats.get('stressors_triggered'):
@@ -470,7 +508,7 @@ if __name__ == "__main__":
     original_stdout = sys.stdout
     with open("simulation_output.txt", "w") as f:
         sys.stdout = f
-        state, stats = run_simulation()
+        state, stats = run_simulation() # This call uses default parameters, including VERBOSE_OUTPUT=True
     sys.stdout = original_stdout # Restore original stdout
 
     if PRINT_TO_CONSOLE:
@@ -480,7 +518,7 @@ if __name__ == "__main__":
         # Re-run the simulation with console printing enabled for its duration
         # Or, ideally, load from the saved state/stats and just print report
         # For simplicity, we'll re-run, but for large simulations, loading is better
-        state, stats = run_simulation(print_to_console=True) # Pass explicitly for console output
+        state, stats = run_simulation(print_to_console=True) # This call uses print_to_console=True, which is not what the user is referring to.
 
     print("Simulation output saved to simulation_output.txt")
     print("\n" + "🔮" * 30 + "\n")
