@@ -1,0 +1,403 @@
+============================================================
+🏘️  WITCH TRIAL SIMULATION
+============================================================
+Village size: 50
+Simulation length: 200 days
+Max trials per day: 3
+============================================================
+
+📜 A mysterious illness has struck the village...
+   Whispers of dark magic begin to spread.
+
+
+============================================================
+--- Day 0 --- (Panic: 0.35, Alive: 50/50, Pending trials: 0)
+============================================================
+  💕 Roland Taylor courts Margaret Mason
+  🔥 Thomas Miller ACCUSES Juliana Long of witchcraft!
+
+  ⚖️ TRIAL: Juliana Long stands accused of witchcraft
+  ⚖️ Winifred Ford testifies FOR Juliana Long
+  ⚖️ Geoffrey Taylor testifies AGAINST Juliana Long
+  ⚖️ Sarah Hall testifies AGAINST Juliana Long
+  ⚖️ Clement Stone testifies AGAINST Juliana Long
+  ⚖️ Thomas Webb testifies FOR Juliana Long
+  ⚖️ Thomas Miller testifies AGAINST Juliana Long
+  ⚖️ Lettice White testifies FOR Juliana Long
+    🤐 Juliana Long refuses to name accomplices
+  💀 Juliana Long is found GUILTY and executed!
+
+============================================================
+--- Day 1 --- (Panic: 0.41, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Matilda Holt
+  💕 Roland Taylor courts Sybil Short
+  👑 Roland Taylor takes Martin Miller under their protection
+
+============================================================
+--- Day 2 --- (Panic: 0.40, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Helewise Wells
+  💕 Roland Taylor courts Winifred Carter
+  🕊️ Idonea Church reconciles with Beatrice Dale
+
+============================================================
+--- Day 3 --- (Panic: 0.38, Alive: 49/50, Pending trials: 0)
+============================================================
+  👑 Roland Taylor takes Helewise Dale under their protection
+
+============================================================
+--- Day 4 --- (Panic: 0.37, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Sybil Short
+  💕 Emma Wood courts Henry Turner
+
+============================================================
+--- Day 5 --- (Panic: 0.36, Alive: 49/50, Pending trials: 0)
+============================================================
+
+============================================================
+--- Day 6 --- (Panic: 0.35, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Roland Taylor courts Margaret Mason
+
+============================================================
+--- Day 7 --- (Panic: 0.34, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Edmund Thatcher courts Dionisia Tower
+  🕊️ Winifred Ford reconciles with Alan Holt
+  💕 Emma Wood courts Henry Turner
+
+============================================================
+--- Day 8 --- (Panic: 0.33, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Winifred Ford reconciles with Alan Holt
+  🔥 David Wright ACCUSES Aldith Short of witchcraft!
+
+  ⚖️ TRIAL: Aldith Short stands accused of witchcraft
+  ⚖️ Alan Holt testifies AGAINST Aldith Short
+  ⚖️ Gunhilda Grove testifies FOR Aldith Short
+  ⚖️ Catherine Grove testifies AGAINST Aldith Short
+  ⚖️ Aldith Church testifies FOR Aldith Short
+  ⚖️ David Wright testifies AGAINST Aldith Short
+    🤐 Aldith Short refuses to name accomplices
+  ✨ Aldith Short is found NOT GUILTY and released!
+
+============================================================
+--- Day 9 --- (Panic: 0.34, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Roland Taylor courts Helewise Wells
+  🕊️ Aldith Short reconciles with Catherine Grove
+  🕊️ Catherine Grove reconciles with Edith Long
+
+============================================================
+--- Day 10 --- (Panic: 0.33, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Helewise Wells reconciles with Alan Holt
+
+============================================================
+--- Day 11 --- (Panic: 0.32, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Aldith Short reconciles with Alan Holt
+  💕 Henry Turner courts Emma Wood
+  💕 Emma Wood courts Henry Turner
+
+============================================================
+--- Day 12 --- (Panic: 0.31, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Aldith Short reconciles with David Wright
+  💕 Roland Taylor courts Sybil Short
+
+============================================================
+--- Day 13 --- (Panic: 0.30, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Winifred Ford reconciles with Thomas Miller
+  💕 Emma Wood courts Michael Bridge
+  💕 Roland Taylor courts Sybil Short
+
+============================================================
+--- Day 14 --- (Panic: 0.28, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Helewise Wells reconciles with Alan Holt
+  🕊️ Aldith Short reconciles with Alan Holt
+
+============================================================
+--- Day 15 --- (Panic: 0.25, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Emma Wood courts Henry Turner
+
+============================================================
+--- Day 16 --- (Panic: 0.23, Alive: 49/50, Pending trials: 0)
+============================================================
+
+============================================================
+--- Day 17 --- (Panic: 0.22, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Aldith Wright reconciles with Edith Long
+  🕊️ Helewise Wells reconciles with Edith Long
+  💕 Henry Turner courts Emma Wood
+
+============================================================
+--- Day 18 --- (Panic: 0.20, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Idonea Church reconciles with Beatrice Dale
+  💕 Thomas Webb courts Sybil Short
+
+============================================================
+--- Day 19 --- (Panic: 0.18, Alive: 49/50, Pending trials: 0)
+============================================================
+
+============================================================
+--- Day 20 --- (Panic: 0.17, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Roland Taylor courts Helewise Wells
+  🕊️ Catherine Grove reconciles with Alan Holt
+  💕 Thomas Webb courts Margaret Mason
+
+============================================================
+--- Day 21 --- (Panic: 0.16, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Emma Wood
+
+============================================================
+--- Day 22 --- (Panic: 0.14, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Aldith Short reconciles with David Wright
+
+============================================================
+--- Day 23 --- (Panic: 0.13, Alive: 49/50, Pending trials: 0)
+============================================================
+
+============================================================
+--- Day 24 --- (Panic: 0.12, Alive: 49/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Emma Wood
+  💕 Adam Old courts Margaret Mason
+  💕 Thomas Webb courts Margaret Mason
+  🕊️ Helewise Wells reconciles with Alan Holt
+
+============================================================
+--- Day 25 --- (Panic: 0.11, Alive: 49/50, Pending trials: 0)
+============================================================
+  🕊️ Aldith Church reconciles with Matilda Holt
+  🔥 Matilda Holt ACCUSES Rose Carter of witchcraft!
+  💕 Henry Turner courts Emma Wood
+  💕 Adam Old courts Margaret Mason
+
+  ⚖️ TRIAL: Rose Carter stands accused of witchcraft
+  ⚖️ Edith Marsh testifies FOR Rose Carter
+  ⚖️ Catherine Grove testifies AGAINST Rose Carter
+  ⚖️ Geoffrey Taylor testifies AGAINST Rose Carter
+  ⚖️ Helewise Dale testifies AGAINST Rose Carter
+  ⚖️ Aldith Church testifies AGAINST Rose Carter
+  ⚖️ Rose Carter the Bold testifies FOR Rose Carter
+    🤐 Rose Carter refuses to name accomplices
+  💀 Rose Carter is found GUILTY and executed!
+
+============================================================
+--- Day 26 --- (Panic: 0.18, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Sybil Short courts Henry Turner
+  💕 Emma Wood courts Henry Turner
+  💕 Henry Turner courts Emma Wood
+
+============================================================
+--- Day 27 --- (Panic: 0.17, Alive: 48/50, Pending trials: 0)
+============================================================
+  🕊️ Winifred Marsh reconciles with Winifred Ford
+  🕊️ Aldith Short reconciles with David Wright
+
+============================================================
+--- Day 28 --- (Panic: 0.17, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Edmund Thatcher courts Dionisia Tower
+  💰 Aldith Short shares resources with Gunhilda Grove
+
+============================================================
+--- Day 29 --- (Panic: 0.16, Alive: 48/50, Pending trials: 0)
+============================================================
+
+============================================================
+--- Day 30 --- (Panic: 0.16, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Emma Wood courts David Wright
+  💕 Henry Turner courts Emma Wood
+  💕 Thomas Webb courts Margaret Mason
+  🕊️ Aldith Church reconciles with Helewise Dale
+
+============================================================
+--- Day 31 --- (Panic: 0.15, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Emma Wood courts Henry Turner
+  🕊️ Idonea Church reconciles with Beatrice Dale
+  💕 Edmund Thatcher courts Dionisia Tower
+
+============================================================
+--- Day 32 --- (Panic: 0.15, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Roland Taylor courts Margaret Mason
+  🕊️ Aldith Wright reconciles with Edith Long
+
+============================================================
+--- Day 33 --- (Panic: 0.14, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Roland Taylor courts Sybil Short
+  💕 Emma Wood courts Henry Turner
+
+============================================================
+--- Day 34 --- (Panic: 0.14, Alive: 48/50, Pending trials: 0)
+============================================================
+  🕊️ Aldith Church reconciles with Helewise Dale
+  💕 Emma Wood courts Henry Turner
+  💕 Roland Taylor courts Winifred Carter
+  💕 Henry Turner courts Sybil Short
+
+============================================================
+--- Day 35 --- (Panic: 0.13, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Adam Old courts Margaret Mason
+  💕 Roland Taylor courts Margaret Mason
+  💕 Henry Turner courts Sybil Short
+  🕊️ Aldith Church reconciles with Winifred Marsh
+
+============================================================
+--- Day 36 --- (Panic: 0.12, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Emma Wood
+  💕 James Wood courts Margaret Mason
+  💕 Emma Wood courts Geoffrey Taylor
+
+============================================================
+--- Day 37 --- (Panic: 0.11, Alive: 48/50, Pending trials: 0)
+============================================================
+  🤝 Martin Miller forms an alliance with Roland Taylor
+  💕 Sybil Short courts Henry Turner
+  🕊️ Idonea Church reconciles with Beatrice Dale
+  🕊️ Helewise Wells reconciles with Alan Holt
+
+============================================================
+--- Day 38 --- (Panic: 0.11, Alive: 48/50, Pending trials: 0)
+============================================================
+  🕊️ Helewise Wells reconciles with Alan Holt
+  💕 Edmund Thatcher courts Sybil Short
+  💕 Margaret Mason courts Thomas Webb
+  💕 Adam Old courts Margaret Mason
+  💕 Sybil Short courts Henry Turner
+  🕊️ Aldith Church reconciles with Winifred Marsh
+
+============================================================
+--- Day 39 --- (Panic: 0.10, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Adam Old courts Winifred Carter
+  💰 Gunhilda Grove shares resources with Aldith Short
+  💕 Emma Wood courts Henry Turner
+  🕊️ Catherine Grove reconciles with Helewise Wells
+
+============================================================
+--- Day 40 --- (Panic: 0.09, Alive: 48/50, Pending trials: 0)
+============================================================
+  🕊️ Catherine Grove reconciles with Helewise Wells
+  🕊️ Idonea Church reconciles with Beatrice Dale
+  💕 Edmund Thatcher courts Dionisia Tower
+
+============================================================
+--- Day 41 --- (Panic: 0.08, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Adam Old courts Margaret Mason
+  💕 Emma Wood courts Henry Turner
+  💕 Roland Taylor courts Sybil Short
+
+============================================================
+--- Day 42 --- (Panic: 0.08, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Sybil Short courts Henry Turner
+  🕊️ Aldith Church reconciles with Winifred Marsh
+  🕊️ Winifred Ford reconciles with Thomas Miller
+  💕 Roland Taylor courts Sybil Short
+  💕 Emma Wood courts David Wright
+  💕 Henry Turner courts Sybil Short
+
+============================================================
+--- Day 43 --- (Panic: 0.07, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Edmund Thatcher courts Margaret Mason
+  🕊️ Winifred Marsh reconciles with Edith Long
+  💕 Sybil Short courts Roland Taylor
+  🕊️ Aldith Church reconciles with Helewise Dale
+  💕 Emma Wood courts David Wright
+
+============================================================
+--- Day 44 --- (Panic: 0.06, Alive: 48/50, Pending trials: 0)
+============================================================
+  💰 Clement Stone shares resources with Idonea Church
+  🕊️ Ralph Baker reconciles with Helewise Dale
+  🕊️ Helewise Wells reconciles with Thomas Miller
+  💰 Aldith Short shares resources with Gunhilda Grove
+  💕 Henry Turner courts Emma Wood
+
+============================================================
+--- Day 45 --- (Panic: 0.06, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Adam Old courts Winifred Carter
+  💕 David Wright courts Emma Wood
+  💕 Emma Wood courts David Wright
+  💕 Margaret Mason courts Thomas Webb
+
+============================================================
+--- Day 46 --- (Panic: 0.05, Alive: 48/50, Pending trials: 0)
+============================================================
+  🕊️ Winifred Ford reconciles with Alan Holt
+  🕊️ Helewise Wells reconciles with Thomas Miller
+  🕊️ Aldith Church reconciles with Winifred Marsh
+  💕 Henry Turner courts Sybil Short
+
+============================================================
+--- Day 47 --- (Panic: 0.05, Alive: 48/50, Pending trials: 0)
+============================================================
+  💕 Henry Turner courts Sybil Short
+  💰 Gunhilda Grove shares resources with Ralph Baker
+
+🕊️ Peace has returned to the village after 47 days.
+
+============================================================
+📊 SIMULATION COMPLETE
+============================================================
+
+Duration: 48 days
+Total accusations: 3
+Total executions: 2
+Survivors: 48/50 (96.0%)
+Peak panic level: 0.41
+Final panic level: 0.05
+Historical violence (trauma): 0.04
+
+📋 Actions taken:
+  SOCIALIZE: 1013
+  SEEK_ADVICE: 607
+  INSULT_PUBLICLY: 337
+  COURT_PERSON: 245
+  RECONCILE_WITH: 76
+  REQUEST_HELP: 30
+  SEEK_PROTECTION: 9
+  SHARE_RESOURCES: 5
+  ACCUSE_WITCHCRAFT: 3
+  FORM_ALLIANCE: 2
+  ATTEND_CHURCH: 1
+  AVOID_PERSON: 1
+  GATHER_EVIDENCE: 1
+  SHARE_GOSSIP: 1
+
+Most accused: Rose Carter (1 accusations)
+Most prolific accuser: Matilda Holt (1 accusations)
+Most traumatized survivor: Edith Marsh (trauma: 0.66)
+Strongest alliance: Gunhilda Grove & Aldith Short (loyalty: 0.99)
+Marriages: 16
+
+💀 The dead (2):
+  ✝ Rose Carter, 27yo craftsperson
+  ✝ Juliana Long, 46yo farmer
+
+Survivors by gender: 29 women, 19 men
+  ⚠️ Women were disproportionately targeted (6.5% vs 0.0%)
+
+🩹 Average survivor trauma: 0.19
