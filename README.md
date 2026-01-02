@@ -129,15 +129,17 @@ This simulator is an experimental environment for studying social dynamics and t
 
 ### Planned Extensions
 
-1. **Adversarial-Defensive Training**: Train competing agents—one attempting to destabilize, another attempting to stabilize the community.
+1. **Emergent Misalignment**: Study whether misaligned behavior can emerge naturally in AI agents in certain environments and under certain conditions. 
 
-2. **Intervention Strategies**: Evaluate minimum interventions required to shift trajectories, including early warning detection and network hub protection.
+2. **Adversarial-Defensive Training**: Train competing agents—one attempting to destabilize, another attempting to stabilize the community.
 
-3. **Adaptive Villagers**: Implement learning mechanisms so villagers update beliefs about manipulation likelihood based on outcomes.
+3. **Intervention Strategies**: Evaluate minimum interventions required to shift trajectories, including early warning detection and network hub protection.
 
-4. **LLM Integration**: Replace IAGO's learned policy with a language model that articulates manipulation strategies, enabling interpretability research.
+4. **Adaptive Villagers**: Implement learning mechanisms so villagers update beliefs about manipulation likelihood based on outcomes.
 
-5. **Real Network Topologies**: Initialize from empirical social network data to study vulnerability profiles of different community structures.
+5. **LLM Integration**: Replace IAGO's learned policy with a language model that articulates manipulation strategies, enabling interpretability research.
+
+6. **Real Network Topologies**: Initialize from empirical social network data to study vulnerability profiles of different community structures.
 
 ---
 
